@@ -1,0 +1,18 @@
+{
+  "name": "fastify-cicd",
+  "description": "Simple hello world sample in Node",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "20.x.x"
+  },
+  "author": "ethanjfobrien",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
