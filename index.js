@@ -6,7 +6,8 @@ app.get('/', (req, res) => {
   res.send(`Hello ${name}! we are live on CI/CID with cloud run!`);
 });
 
-const port = parseInt(process.env.PORT) || 8080;
+// const port = parseInt(process.env.PORT) || 8080;
+const port = 3000;
 app.listen(port, () => {
   console.log(`helloworld: listening on port ${port}`);
 });
