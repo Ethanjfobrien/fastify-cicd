@@ -1,13 +1,23 @@
-import express from 'express';
-const app = express();
+// ESM
+import Fastify from 'fastify'
 
-app.get('/', (req, res) => {
-  const name = process.env.NAME || 'World';
-  res.send(`Hello ${name}! we are live on CI/CID with cloud run!`);
-});
+const fastify = Fastify({
+  logger: true
+})
 
-// const port = parseInt(process.env.PORT) || 8080;
-const port = 3000;
-app.listen(port, () => {
-  console.log(`helloworld: listening on port ${port}`);
-});
+fastify.get('/', async (request, reply) => {
+  return { hello: 'world' }
+})
+
+/**
+ * Run the server!
+ */
+const start = async () => {
+  try {
+    await fastify.listen({ port: 8080 , host: '0.0.0.0'})
+  } catch (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+}
+start()

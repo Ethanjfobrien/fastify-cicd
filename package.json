@@ -13,6 +13,6 @@
   },
   "author": "ethanjfobrien",
   "dependencies": {
-    "express": "^4.17.1"
+    "fastify": "^4.27.x"
   }
 }
